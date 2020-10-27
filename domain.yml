@@ -1,0 +1,34 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- ask_buy_what:
+    use_entities: []
+entities:
+- buy_item
+slots:
+  buy_item:
+    type: text
+responses:
+  utter_greet:
+  - text: 你好
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: '希望这些可以让你开心:'
+  utter_did_that_help:
+  - text: 这些帮到你了吗
+  utter_happy:
+  - text: 太好了！
+  utter_goodbye:
+  - text: 再见
+  utter_notknow:
+  - text: 未能识别
+actions:
+- action_ask_buy_what
